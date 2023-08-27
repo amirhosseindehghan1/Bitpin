@@ -6,7 +6,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BlogPost
-        fields = ('id', 'title', 'description', 'num_ratings', 'ratings', 'average_rating')
+        fields = ('id', 'title', 'description', 'ratings', 'average_rating')
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:

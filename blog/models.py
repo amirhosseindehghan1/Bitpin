@@ -18,7 +18,16 @@ class BlogPost(models.Model):
 
 
 class Rating(models.Model):
-    points = models.IntegerField()
+    POINTS_CHOICES = (
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+
+    points = models.IntegerField(choices=POINTS_CHOICES, default=0)
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='ratings')
 
