@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bb*871@wjhq4av1b$dc_jxbue_0uqr9nu-lwy4fasvrw5r(d1r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -141,3 +141,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_COOKIE_SECURE = True  # Protection MITM attack
+SESSION_COOKIE_SECURE = True  # Protection MITM attack
+SECURE_BROWSE_XSS_FILTER = True  # Protection XSS attack
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Protection XSS attack
+SECURE_HOST_SECONDS = 86400 # Increasing the security of the transport layer
