@@ -77,10 +77,28 @@ WSGI_APPLICATION = 'Bitpin_core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bitpin',
+        'USER': 'root',
+        'PASSWORD': '123456789987654321',
+        'HOST': 'mariadb',
+        'PORT': '3306',
+        'OPTIONS' : {
+            'sql_mode' : 'STRICT_ALL_TABLES'
+        }
     }
 }
+
+
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
