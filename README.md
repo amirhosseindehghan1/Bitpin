@@ -12,7 +12,7 @@ Three containers are created that run the Django project with gonicorn
 ## Create Superuser
 For createsuperuser you can login django containet shell with this command:
 ```
-docker exec -it django_container_name_or_id bash sh
+docker exec -it django_container_name_or_id bash or sh
 python manage.py createsuperuser
 ```
 After Create Superuser just exit the shell:
